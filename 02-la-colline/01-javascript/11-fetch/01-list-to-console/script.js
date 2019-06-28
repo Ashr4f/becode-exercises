@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    // objects RegEx /(?:{.*?)(?:})/igm
+
+    document.getElementById("run").addEventListener("click", function () {
+        let apiURL = "http://localhost:3000/heroes";
+
+        fetch(apiURL).then(function (data) {
+
+            data.json().then(function (dataToJson) {
+                console.log(dataToJson);
+
+            }).catch(function (err) {
+                console.error(err);
+            });
+        });
+
+    });
 })();

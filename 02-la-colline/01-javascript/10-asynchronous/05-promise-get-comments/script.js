@@ -10,5 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", function () {
+
+        window.lib.getPosts().then(function (posts) {
+            posts.forEach((post, index) => {
+                window.lib.getComments().then(function (comms) {
+                    post.comments = comms;
+                    if (index === posts.length - 1) {
+                        console.log(posts);
+                    }
+                });
+            });
+        });
+
+    });
 })();

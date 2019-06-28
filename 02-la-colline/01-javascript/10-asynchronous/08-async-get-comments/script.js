@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", function () {
+        (async () => {
+            let posts = await window.lib.getPosts();
+            await posts.forEach(async (post, index) => {
+                let comms = await window.lib.getComments();
+                post.comments = comms;
+
+                if (index === posts.length - 1) {
+                    console.log(posts);
+                }
+            });
+        })();
+    });
 })();

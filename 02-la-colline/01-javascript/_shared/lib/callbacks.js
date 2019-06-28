@@ -14,7 +14,10 @@
             next(
                 null,
                 Array.from(new Array(utils.getRandomInt(5, 10)).keys()).map(
-                    id => ({id, ...utils.generatePost()}),
+                    id => ({
+                        id,
+                        ...utils.generatePost()
+                    }),
                 ),
             ),
         );
@@ -24,7 +27,10 @@
             next(
                 null,
                 Array.from(new Array(utils.getRandomInt(5, 10)).keys()).map(
-                    id => ({id, ...utils.generateComment()}),
+                    id => ({
+                        id,
+                        ...utils.generateComment()
+                    }),
                 ),
             ),
         );
@@ -38,7 +44,10 @@
             next(
                 null,
                 Array.from(new Array(utils.getRandomInt(5, 15)).keys()).map(
-                    id => ({id, name: utils.generateName()}),
+                    id => ({
+                        id,
+                        name: utils.generateName()
+                    }),
                 ),
             );
         });
