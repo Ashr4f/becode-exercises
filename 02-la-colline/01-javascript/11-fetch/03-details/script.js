@@ -53,13 +53,14 @@
 
                      `;
                     } else {
-                        if (isNaN(parseInt(inputField.value)) && index === dataToJson.length - 1) {
-                            alert("Please enter a valid number");
-                        }
-                        if (index === dataToJson.length - 1 &&
-                            parseInt(inputField.value) > dataToJson.length |
-                            parseInt(inputField.value) <= 0) {
-                            alert(`There're ${dataToJson.length} heroes, to show one simply enter and ID between 1 and ${dataToJson.length}`);
+                        if (index === dataToJson.length - 1) {
+                            if (isNaN(parseInt(inputField.value))) {
+                                alert("Please enter a valid number");
+                            }
+                            if (parseInt(inputField.value) > dataToJson.length |
+                                parseInt(inputField.value) <= 0) {
+                                alert(`There're ${dataToJson.length} heroes, to show one simply enter an ID between 1 and ${dataToJson.length}`);
+                            }
                         }
                     }
 

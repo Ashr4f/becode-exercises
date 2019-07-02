@@ -16,7 +16,6 @@
 
     document.getElementById("run").addEventListener("click", function () {
 
-        let idCheck = "not-found";
         let heroIDValue = heroID.value.trim();
 
         (async () => {
@@ -28,6 +27,7 @@
                 const responseContent = await response.json();
 
                 responseContent.forEach(async (hero, index) => {
+                    let idCheck = "not-found";
                     if (heroIDValue == hero.id) {
                         idCheck = "found";
                         const responseFetch = await fetch(apiURL + "/" + heroIDValue, {

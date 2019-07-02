@@ -8,20 +8,7 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-/**
-document.getElementById("run").addEventListener("click", function () {
-    let apiURL = "http://localhost:3000/heroes";
-    let arr = [];
-    fetch(apiURL).then(function (data) {
-        data.json().then(function (json) {
-            console.log(json);
-        }).catch(function (err) {
-            console.error(err);
-        });
-    });
 
-});
-*/
 (() => {
     let target = document.getElementById("target");
     const apiURL = "http://localhost:3000/heroes";
@@ -90,7 +77,7 @@ document.getElementById("run").addEventListener("click", function () {
 
 
 
-// POSSIBLE SOLUTION UNDER FOREACH, PREFERED BUT TOO LONG :/
+// POSSIBLE SOLUTION USING FOREACH, PREFERED BUT TOO LONG :/
 /*   
 
 function addClass(el, className) {

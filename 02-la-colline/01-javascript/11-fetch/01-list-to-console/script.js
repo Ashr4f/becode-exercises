@@ -8,22 +8,11 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
+// objects RegEx /(?:{.*?)(?:})/igm
 
 (() => {
-    // objects RegEx /(?:{.*?)(?:})/igm
-
-    document.getElementById("run").addEventListener("click", function () {
-        let apiURL = "http://localhost:3000/heroes";
-
-        fetch(apiURL).then(function (data) {
-
-            data.json().then(function (dataToJson) {
-                console.log(dataToJson);
-
-            }).catch(function (err) {
-                console.error(err);
-            });
-        });
-
+    document.getElementById("run").addEventListener("click", async function () {
+        const data = await fetch("http://localhost:3000/heroes");
+        console.log(await data.json());
     });
 })();
